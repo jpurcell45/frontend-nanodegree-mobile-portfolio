@@ -1,16 +1,12 @@
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
-
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
-
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
 http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
-
 Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
@@ -498,30 +494,13 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
-
   frame++;
-
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementByClassName('mover');
-
-  var length = items.length;
-
-  var scroll = document.body.scrollTop;
-
-  var phases = [];
-
-  for (i=0; i<5; i++) {
-    phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    phases.push(phase);
-  }
-
-  for (i=0; i<length; i++) {
-    items[i].style.transform = "(translateX  + 100 * phases[i % 5] + 'px')";
-  //var items = document.querySelectorAll('.mover');
-  //for (var i = 0; i < items.length; i++) {
-    //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+  var items = document.querySelectorAll('.mover');
+  for (var i = 0; i < items.length; i++) {
+    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -547,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
-    elem.style.left = 0;
+    elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
