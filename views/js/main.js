@@ -501,7 +501,7 @@ function updatePositions() {
 
   for (i=0; i<5; i++) {
     phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    phases.push(phase);
+    phase.push(phase);
   }
   var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
