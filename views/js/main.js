@@ -497,15 +497,9 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var phase = [];
-
-  for (i=0; i<5; i++) {
-    phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    phase.push(phase);
-  }
   var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
-    // this is original var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
