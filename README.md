@@ -1,5 +1,24 @@
 ## Website Performance Optimization portfolio project
 
+
+## Improvements Implemented
+
+Index.html
+1. Compressed and resized pizzeria.jpg.
+2. Compressed profile picture.
+3. Inlined css.
+4. Removed request for google fonts.
+
+views/js/main.js
+1. Globally replaced querySelector and querySelectorAll with getElementById
+and getElementsByClassName.
+2. Refactored updatePositions function which involved removing a bunch of
+unnecessary calculations and simplifying the for-loop.
+3. Refactored changePizzaSizes function again removing unnecessary calculations
+and pulling vars out of the for-loop that only needed calculating once.
+
+
+
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 To get started, check out the repository and inspect the code.
@@ -32,7 +51,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 #### Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
