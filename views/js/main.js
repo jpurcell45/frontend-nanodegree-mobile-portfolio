@@ -424,31 +424,31 @@ var resizePizzas = function(size) {
     //var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
-    function sizeSwitcher (size) {
+    function changePizzaSizes(size){
       switch(size) {
         case "1":
-          return 0.25;
+          newWidth =  25;
+          break;
         case "2":
-          return 0.3333;
+          newWidth = 33;
+          break;
         case "3":
-          return 0.5;
+          newWidth = 50;
+          break;
         default:
           console.log("bug in sizeSwitcher");
       }
-    }
-
-    var newSize = sizeSwitcher(size);
+    //var newSize = sizeSwitcher(size);
     //var dx = (newSize - oldSize) * windowWidth;
-
     //return dx;
   //}
-
+    var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
   // Iterates through pizza elements on the page and changes their widths
-  function changePizzaSizes(size) {
-    for (var i = 0; i < document.getElementsByClassName("randomPizzaContainer").length; i++) {
+
+    for (var i = 0, len = randomPizzas.length; i < len; i++) {
       //var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.getElementsByClassName("randomPizzaContainer")[i].offsetWidth);
-      document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      //var newwidth = (document.getElementsByClassName("randomPizzaContainer")[i].offsetWidth);
+      //document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
     }
   }
 
@@ -491,13 +491,12 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-
+  var items = document.getElementsByClassName('mover');
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   var scrollPosition = document.body.scrollTop / 1250;
-  var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
     //var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     var phase = Math.sin((scrollPosition) + (i %5));
