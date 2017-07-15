@@ -436,20 +436,14 @@ var resizePizzas = function(size) {
           newWidth = 50;
           break;
         default:
-          console.log("bug in sizeSwitcher");
+          console.log("bug in changePizzaSizes");
       }
-    //var newSize = sizeSwitcher(size);
-    //var dx = (newSize - oldSize) * windowWidth;
-    //return dx;
-  //}
+
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
   // Iterates through pizza elements on the page and changes their widths
 
     for (var i = 0, len = randomPizzas.length; i < len; i++) {
-      randomPizzas[i].style.width = newWidth + " % ";
-      //var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      //var newwidth = (document.getElementsByClassName("randomPizzaContainer")[i].offsetWidth);
-      //document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      randomPizzas[i].style.width = newWidth + "%";
     }
   }
 
@@ -465,9 +459,9 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-for (var i = 2; i < 100; i++) {
   var pizzasDiv = document.getElementById("randomPizzas");
-  pizzasDiv.appendChild(pizzaElementGenerator(i));
+  for (var i = 2; i < 100; i++) {
+    pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
