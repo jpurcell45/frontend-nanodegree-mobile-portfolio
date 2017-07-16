@@ -8,6 +8,7 @@ Index.html
 2. Compressed profile picture.
 3. Inlined css.
 4. Removed request for google fonts.
+5. Removed inline style to css style sheet for randomPizzaContainer.
 
 views/js/main.js
 1. Globally replaced querySelector and querySelectorAll with getElementById
@@ -18,6 +19,10 @@ unnecessary calculations and simplifying the for-loop.
 and pulling vars out of the for-loop that only needed calculating once.
 4. On the DOMContentLoaded section Refactored and reduced the number of pizzas
 requested to be drawn and removed querySelector.
+
+views/css/styles.css
+1. Added transform : translateZ(0) to the mover and randomPizzaContainer.
+2. Added width and height style from index.html to randomPizzaContainer css.
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
