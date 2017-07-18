@@ -26,6 +26,7 @@ reviewer suggestion.
 views/css/styles.css
 1. Added transform : translateZ(0) to the mover and randomPizzaContainer.
 2. Added width and height style from index.html to randomPizzaContainer css.
+3. Added backface-visibility hidden to the mover class.
 
 views/images
 1.  Served up two versions of the pizzeria, one for the index.html page

@@ -30,6 +30,7 @@ form {
 }
 
 .mover {
+  backface-visibility: hidden;
   transform: translateZ(0);
   position: fixed;
   width: 256px;
